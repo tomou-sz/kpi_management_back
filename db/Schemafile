@@ -1,0 +1,5 @@
+create_table "users", force: :cascase do |t|
+  t.string "name", limit: 255
+  t.string "jira_id", limit: 255
+  t.string "position", limit:255
+end

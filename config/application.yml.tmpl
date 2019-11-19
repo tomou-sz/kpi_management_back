@@ -1,0 +1,35 @@
+defaults: &defaults
+  # Jira config
+  JIRA_USERNAME: 'username'
+  JIRA_PASSWORD: 'password'
+  JIRA_SITE: 'https://your-jira-site'
+  # Database configu
+  DATABASE_HOST: <%= ENV.fetch('DK_MYSQL_HOST') { 'localhost' } %>
+  DATABASE_USERNAME: <%= ENV.fetch('DK_MYSQL_USER') { 'database_username' } %>
+  DATABASE_PASSWORD: <%= ENV.fetch('DK_MYSQL_PASSWORD') { 'database_password' } %>
+  DATABASE_POOL: <%= ENV.fetch('DK_MYSQL_POOL') { '5' } %>
+
+development:
+  <<: *defaults
+  ENDPOINT: 'http://localhost:3000'
+  # Database config
+  DATABASE_NAME: 'database_name'
+  DATABASE_PORT: '3306'
+
+test:
+  <<: *defaults
+  ENDPOINT: 'http://localhost:3000'
+  # Database config
+  DATABASE_NAME: 'database_name'
+  DATABASE_PORT: '3306'
+
+production:
+  <<: *defaults
+  ENDPOINT: 'http://localhost:3000'
+  # Database config
+  DATABASE_HOST: 'hostname'
+  DATABASE_NAME: 'database_name'
+  DATABASE_PORT: '3306'
+  DATABASE_USERNAME: 'database_username'
+  DATABASE_PASSWORD: '<database_></database_>'
+  DATSBASE_URL: 'postgres://<username>:<password>@<host>:<port>/<database>'
