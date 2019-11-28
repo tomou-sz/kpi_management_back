@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :users do
+    get :sprint_tickets
+  end
   resource :daily_work_logs do
     get :get_work_log
   end

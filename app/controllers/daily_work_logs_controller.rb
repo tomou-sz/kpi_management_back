@@ -8,7 +8,7 @@ class DailyWorkLogsController < ApplicationController
     jira_id = params[:jira_id]
     total_time_spent = 0
     issues = @client.Issue.jql(
-      "worklogAuthor = '#{jira_id}'",
+      "worklogAuthor = #{jira_id}",
       fields:[:key,:worklog],
       max_results: 5000,
       start_index:0
