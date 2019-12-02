@@ -9,11 +9,11 @@ class UsersController < ApplicationController
   def sprint_tickets
     @user = User.find(params[:user_id])
     jira_id = @user.jira_id
-    sprint_id = params[:sprint_id]
-    @sprint_tickets_list = {user_id: @user.id, jira_id: jira_id, sprint_id: sprint_id, sprint_tickets: []}
+    target_sprint_id = params[:sprint_id]
+    @sprint_tickets_list = {user_id: @user.id, jira_id: jira_id, target_sprint_id: target_sprint_id, sprint_tickets: []}
     issues = @client.Issue.jql(
-      "Sprint = #{sprint_id} AND assignee in (#{jira_id})",
-      fields:[:key, :summary, :issuetype, :status, :timetracking],
+      "Sprint = #{target_sprint_id} AND assignee in (#{jira_id})",
+      fields:[:key, :summary, :issuetype, :status, :timetracking, :customfield_10101],
       max_results: 5000,
       start_index:0
     )
@@ -30,6 +30,9 @@ class UsersController < ApplicationController
     ticket_fields[:key] = issue_attr["key"]
     ticket_fields[:summary] = issue_fields["summary"]
     ticket_fields[:issuetype] = issue_fields["issuetype"]["name"]
+    # customfield_10101 return com.atlassian.greenhopper.service.sprint.Sprint@6e71ace3 \
+    # [id=,rapidViewId=,state=,name=,startDate=,endDate=,completeDate=,sequence=,goal=]
+    ticket_fields[:sprint_ids] = issue_fields["customfield_10101"].map{ |str| str[/id=/]; $'[/,rapidViewId/]; $` }
     ticket_fields[:original_estimate_seconds] = issue_fields["timetracking"]["originalEstimateSeconds"]
     ticket_fields[:remaining_estimate_seconds] = issue_fields["timetracking"]["remainingEstimateSeconds"]
     ticket_fields[:time_spent_seconds] = issue_fields["timetracking"]["timeSpentSeconds"]
