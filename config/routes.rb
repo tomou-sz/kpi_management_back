@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   resource :productivities do
     get :sprint_productivity
   end
+
+  resource :sprints do
+    get :board_sprints
+  end
   root 'daily_work_logs#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
