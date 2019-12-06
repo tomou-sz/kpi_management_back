@@ -3,22 +3,34 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    render json: @users
+    response_success(self.class.name, self.action_name, @users)
   end
 
   def sprint_tickets
-    @user = User.find(params[:user_id])
+    @user = User.find_by(id: params[:user_id])
+    return response_not_found(@user.class.name) if @user.blank?
+
     jira_id = @user.jira_id
     target_sprint_id = params[:sprint_id]
+    return response_bad_request if jira_id.blank? || target_sprint_id.blank?
+
     @sprint_tickets_list = {user_id: @user.id, jira_id: jira_id, target_sprint_id: target_sprint_id, sprint_tickets: []}
-    issues = @client.Issue.jql(
-      "Sprint = #{target_sprint_id} AND assignee in (#{jira_id})",
-      fields:[:key, :summary, :issuetype, :status, :timetracking, :customfield_10101],
-      max_results: 5000,
-      start_index:0
-    )
-    issues.each { |issue| @sprint_tickets_list[:sprint_tickets] << ticket_attributes(issue) }
-    render json: @sprint_tickets_list
+    begin
+      issues = @client.Issue.jql(
+        "Sprint = #{target_sprint_id} AND assignee in (#{jira_id})",
+        fields:[:key, :summary, :issuetype, :status, :timetracking, :customfield_10101],
+        max_results: 5000,
+        start_index:0
+      )
+      issues.each { |issue| @sprint_tickets_list[:sprint_tickets] << ticket_attributes(issue) }
+      response_success(self.class.name, self.action_name, @sprint_tickets_list)
+    end
+  rescue => e
+    if e.class.name == "JIRA::HTTPError"
+      response_bad_request
+    else
+      response_internal_server_error
+    end
   end
 
   private
