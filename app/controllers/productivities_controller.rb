@@ -86,7 +86,7 @@ class ProductivitiesController < ApplicationController
         carried_over_logs_total += time_spent_seconds
       elsif work_log['author']['key'] == @jira_id && log_at > @sprint_end_date
         do_over_logs_total += time_spent_seconds
-      else
+      elsif work_log['author']['key'] == @jira_id
         sprint_work_logs_total += time_spent_seconds
       end
     end
