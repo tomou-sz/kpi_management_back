@@ -18,6 +18,7 @@ development:
   # Database config
   DATABASE_NAME: 'database_name'
   DATABASE_PORT: '3306'
+  REDIS_CLUSTER_URL: 'redis://localhost:6379'
 
 test:
   <<: *defaults
@@ -25,6 +26,7 @@ test:
   # Database config
   DATABASE_NAME: 'database_name'
   DATABASE_PORT: '3306'
+  REDIS_CLUSTER_URL: 'redis://localhost:6379'
 
 production:
   <<: *defaults
@@ -36,3 +38,4 @@ production:
   DATABASE_USERNAME: 'database_username'
   DATABASE_PASSWORD: '<database_></database_>'
   DATSBASE_URL: 'postgres://<username>:<password>@<host>:<port>/<database>'
+  REDIS_CLUSTER_URL: 'redis://localhost:6379'
