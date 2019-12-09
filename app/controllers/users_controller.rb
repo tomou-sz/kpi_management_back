@@ -2,29 +2,37 @@ class UsersController < ApplicationController
   include JiraInitializer
 
   def index
-    @users = User.all
+    @users =
+      Rails.cache.fetch('all_users') do
+        User.all
+      end
     response_success(self.class.name, self.action_name, @users)
   end
 
   def sprint_tickets
-    @user = User.find_by(id: params[:user_id])
-    return response_not_found(@user.class.name) if @user.blank?
+    user_id = params[:user_id]
+    sprint_id = params[:sprint_id]
+    @sprint_tickets_list =
+      Rails.cache.fetch("sprint_tickets_user_id_#{user_id}_sprint_id_#{sprint_id}") do
+        @user = User.find_by(id: params[:user_id])
+        return response_not_found(@user.class.name) if @user.blank?
 
-    jira_id = @user.jira_id
-    target_sprint_id = params[:sprint_id]
-    return response_bad_request if jira_id.blank? || target_sprint_id.blank?
+        jira_id = @user.jira_id
+        return response_bad_request if jira_id.blank? || sprint_id.blank?
 
-    @sprint_tickets_list = {user_id: @user.id, jira_id: jira_id, target_sprint_id: target_sprint_id, sprint_tickets: []}
-    begin
-      issues = @client.Issue.jql(
-        "Sprint = #{target_sprint_id} AND assignee in (#{jira_id})",
-        fields:[:key, :summary, :issuetype, :status, :timetracking, :customfield_10101],
-        max_results: 5000,
-        start_index:0
-      )
-      issues.each { |issue| @sprint_tickets_list[:sprint_tickets] << ticket_attributes(issue) }
-      response_success(self.class.name, self.action_name, @sprint_tickets_list)
-    end
+        sprint_tickets_list_hash = {user_id: @user.id, jira_id: jira_id, target_sprint_id: sprint_id, sprint_tickets: []}
+        begin
+          issues = @client.Issue.jql(
+            "Sprint = #{sprint_id} AND assignee in (#{jira_id})",
+            fields:[:key, :summary, :issuetype, :status, :timetracking, :customfield_10101],
+            max_results: 5000,
+            start_index:0
+          )
+          issues.each { |issue| sprint_tickets_list_hash[:sprint_tickets] << ticket_attributes(issue) }
+        end
+        sprint_tickets_list_hash
+      end
+    response_success(self.class.name, self.action_name, @sprint_tickets_list)
   rescue => e
     if e.class.name == "JIRA::HTTPError"
       response_bad_request

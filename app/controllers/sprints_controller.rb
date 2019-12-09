@@ -5,16 +5,19 @@ class SprintsController < ApplicationController
     # TODO: Board id will be replaced with params[:board_id]
     begin
       board_id = ENV['JIRA_MAIN_PROJECT_BOARD_ID']
-      board = @client.Board.find(board_id)
-      @board_sprints = board.sprints.map do |sprint|
-        sprint_attrs = sprint.attrs
-        {
-          id: sprint_attrs['id'],
-          state: sprint_attrs['state'],
-          start_date: sprint_attrs['startDate'],
-          end_date: sprint_attrs['endDate']
-        }
-      end
+      @board_sprints =
+        Rails.cache.fetch("sprint_productivity_board_id_#{board_id}") do
+          board = @client.Board.find(board_id)
+          board.sprints.map do |sprint|
+            sprint_attrs = sprint.attrs
+            {
+              id: sprint_attrs['id'],
+              state: sprint_attrs['state'],
+              start_date: sprint_attrs['startDate'],
+              end_date: sprint_attrs['endDate']
+            }
+          end
+        end
       response_success(self.class.name, self.action_name, @board_sprints)
     end
   rescue => e

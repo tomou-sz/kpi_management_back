@@ -2,48 +2,53 @@ class ProductivitiesController < ApplicationController
   include JiraInitializer
 
   def sprint_productivity
-    user = User.find_by(id: params[:user_id])
-    return response_not_found(user.class.name) if user.blank?
+    user_id = params[:user_id]
+    sprint_id = params[:sprint_id]
+    @sprint_productivity =
+      Rails.cache.fetch("sprint_productivity_user_id_#{user_id}_sprint_id_#{sprint_id}") do
+        user = User.find_by(id: user_id)
+        return response_not_found(user.class.name) if user.blank?
 
-    @jira_id = user.jira_id
-    target_sprint_id = params[:sprint_id]
-    return response_bad_request if @jira_id.blank? || target_sprint_id.blank?
+        @jira_id = user.jira_id
+        return response_bad_request if @jira_id.blank? || sprint_id.blank?
 
-    @sprint_productivity = { user_id: user.id, jira_id: @jira_id, target_sprint_id: target_sprint_id, kpi: { main: {}, others: {} }}
-    begin
-      sprint = @client.Sprint.find(target_sprint_id)
-      @sprint_start_date = sprint.attrs['startDate'].to_date
-      @sprint_end_date = sprint.attrs['endDate'].to_date
-      logger.info("sprint_start_date: #{@sprint_start_date}, sprint_end_date: #{@sprint_end_date}")
-      # Development
-      development_issues = @client.Issue.jql(
-        "Sprint = #{target_sprint_id} AND assignee in (#{@jira_id}) AND labels not in (#{ENV['JIRA_REVIEW_LABEL']})",
-        fields:[:key, :summary, :issuetype, :status, :timetracking, :customfield_10101, :worklog],
-        max_results: 5000,
-        start_index:0
-      )
-      @sprint_productivity[:kpi][:main].merge!(main_development_kpi_attributes(development_issues))
-      # Review
-      review_issues = @client.Issue.jql(
-        'Sprint = 21 AND assignee in (t.shida) AND labels in (Review)',
-        fields:[:key, :summary, :issuetype, :status, :timetracking, :customfield_10101, :worklog],
-        max_results: 5000,
-        start_index:0
-      )
-      @sprint_productivity[:kpi][:main].merge!(main_revierw_kpi_attribtues(review_issues))
-      # Others projects
-      other_projects_issues = @client.Issue.jql(
-        "Project != '#{ENV['JIRA_MAIN_PROJECT_KEY']}' AND assignee = #{@jira_id} AND
-        worklogDate >= '#{@sprint_start_date.to_s.gsub('-', '/')}' AND
-        worklogDate <= '#{@sprint_end_date.to_s.gsub('-', '/')}' AND
-        worklogAuthor = #{@jira_id}",
-        fields:[:key, :timetracking, :worklog],
-        max_results: 5000,
-        start_index:0
-      )
-      @sprint_productivity[:kpi][:others].merge!(others_kpi_attribtues(other_projects_issues))
-      response_success(self.class.name, self.action_name, @sprint_productivity)
-    end
+        sprint_productivity_hash = { user_id: user.id, jira_id: @jira_id, target_sprint_id: sprint_id, kpi: { main: {}, others: {} }}
+        begin
+          sprint = @client.Sprint.find(sprint_id)
+          @sprint_start_date = sprint.attrs['startDate'].to_date
+          @sprint_end_date = sprint.attrs['endDate'].to_date
+          logger.info("sprint_start_date: #{@sprint_start_date}, sprint_end_date: #{@sprint_end_date}")
+          # Development
+          development_issues = @client.Issue.jql(
+            "Sprint = #{sprint_id} AND assignee in (#{@jira_id}) AND labels not in (#{ENV['JIRA_REVIEW_LABEL']})",
+            fields:[:key, :summary, :issuetype, :status, :timetracking, :customfield_10101, :worklog],
+            max_results: 5000,
+            start_index:0
+          )
+          sprint_productivity_hash[:kpi][:main].merge!(main_development_kpi_attributes(development_issues))
+          # Review
+          review_issues = @client.Issue.jql(
+            'Sprint = 21 AND assignee in (t.shida) AND labels in (Review)',
+            fields:[:key, :summary, :issuetype, :status, :timetracking, :customfield_10101, :worklog],
+            max_results: 5000,
+            start_index:0
+          )
+          sprint_productivity_hash[:kpi][:main].merge!(main_revierw_kpi_attribtues(review_issues))
+          # Others projects
+          other_projects_issues = @client.Issue.jql(
+            "Project != '#{ENV['JIRA_MAIN_PROJECT_KEY']}' AND assignee = #{@jira_id} AND
+            worklogDate >= '#{@sprint_start_date.to_s.gsub('-', '/')}' AND
+            worklogDate <= '#{@sprint_end_date.to_s.gsub('-', '/')}' AND
+            worklogAuthor = #{@jira_id}",
+            fields:[:key, :timetracking, :worklog],
+            max_results: 5000,
+            start_index:0
+          )
+          sprint_productivity_hash[:kpi][:others].merge!(others_kpi_attribtues(other_projects_issues))
+          sprint_productivity_hash
+        end
+      end
+    response_success(self.class.name, self.action_name, @sprint_productivity)
   rescue => e
     if e.class.name == "JIRA::HTTPError"
       response_bad_request
@@ -81,7 +86,7 @@ class ProductivitiesController < ApplicationController
         carried_over_logs_total += time_spent_seconds
       elsif work_log['author']['key'] == @jira_id && log_at > @sprint_end_date
         do_over_logs_total += time_spent_seconds
-      else
+      elsif work_log['author']['key'] == @jira_id
         sprint_work_logs_total += time_spent_seconds
       end
     end
