@@ -36,10 +36,10 @@ class ProductivitiesController < ApplicationController
           sprint_productivity_hash[:kpi][:main].merge!(main_revierw_kpi_attribtues(review_issues))
           # Others projects
           other_projects_issues = @client.Issue.jql(
-            "Project != '#{ENV['JIRA_MAIN_PROJECT_KEY']}' AND assignee = #{@jira_id} AND
-            worklogDate >= '#{@sprint_start_date.to_s.gsub('-', '/')}' AND
-            worklogDate <= '#{@sprint_end_date.to_s.gsub('-', '/')}' AND
-            worklogAuthor = #{@jira_id}",
+            ("Project != '#{ENV['JIRA_MAIN_PROJECT_KEY']}' AND assignee = #{@jira_id} AND \
+            worklogDate >= '#{@sprint_start_date.to_s.gsub('-', '/')}' AND \
+            worklogDate <= '#{@sprint_end_date.to_s.gsub('-', '/')}' AND \
+            worklogAuthor = #{@jira_id}").squeeze(" "),
             fields:[:key, :timetracking, :worklog],
             max_results: 5000,
             start_index:0

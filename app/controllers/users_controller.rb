@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def index
     @users =
       Rails.cache.fetch('all_users') do
-        User.all
+        User.all.to_a
       end
     response_success(self.class.name, self.action_name, @users)
   end
