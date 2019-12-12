@@ -1,0 +1,610 @@
+{
+  "expand": "schema,names",
+  "startAt": 0,
+  "maxResults": 1000,
+  "total": 14,
+  "issues": [
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "12953",
+      "self": "https://jira.test.jp/rest/api/2/issue/12953",
+      "key": "TEST-1823",
+      "fields": {
+        "summary": "[ContentsManagement][MyContents][BE] Weird file appears on S3",
+        "issuetype": {
+          "self": "https://jira.test.jp/rest/api/2/issuetype/10004",
+          "id": "10004",
+          "description": "A problem which impairs or prevents the functions of the product.",
+          "iconUrl": "https://jira.test.jp/secure/viewavatar?size=xsmall&avatarId=10303&avatarType=issuetype",
+          "name": "Bug",
+          "subtask": false,
+          "avatarId": 10303
+        },
+        "customfield_10101": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@44c07ead[id=1,rapidViewId=1,state=ACTIVE,name=sprint_2019_12_02 ~ 2019_12_13,startDate=2019-12-02T10:01:44.048+07:00,endDate=2019-12-15T13:58:00.000+07:00,completeDate=<null>,sequence=1,goal=]"
+        ],
+        "timetracking": {
+          "originalEstimate": "1h",
+          "remainingEstimate": "0m",
+          "timeSpent": "1h",
+          "originalEstimateSeconds": 3600,
+          "remainingEstimateSeconds": 0,
+          "timeSpentSeconds": 3600
+        },
+        "status": {
+          "self": "https://jira.test.jp/rest/api/2/status/10200",
+          "description": "This status is managed internally by Jira Software",
+          "iconUrl": "https://jira.test.jp/",
+          "name": "Review",
+          "id": "10200",
+          "statusCategory": {
+            "self": "https://jira.test.jp/rest/api/2/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "12943",
+      "self": "https://jira.test.jp/rest/api/2/issue/12943",
+      "key": "TEST-1813",
+      "fields": {
+        "summary": "[MyContents][ContentsManagement] Uppercase extension on IE11 cause S3 access deny error",
+        "issuetype": {
+          "self": "https://jira.test.jp/rest/api/2/issuetype/10002",
+          "id": "10002",
+          "description": "A task that needs to be done.",
+          "iconUrl": "https://jira.test.jp/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318
+        },
+        "customfield_10101": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@44c07ead[id=1,rapidViewId=1,state=ACTIVE,name=sprint_2019_12_02 ~ 2019_12_13,startDate=2019-12-02T10:01:44.048+07:00,endDate=2019-12-15T13:58:00.000+07:00,completeDate=<null>,sequence=1,goal=]"
+        ],
+        "timetracking": {
+          "originalEstimate": "1h",
+          "remainingEstimate": "0m",
+          "timeSpent": "1h",
+          "originalEstimateSeconds": 3600,
+          "remainingEstimateSeconds": 0,
+          "timeSpentSeconds": 3600
+        },
+        "status": {
+          "self": "https://jira.test.jp/rest/api/2/status/10200",
+          "description": "This status is managed internally by Jira Software",
+          "iconUrl": "https://jira.test.jp/",
+          "name": "Review",
+          "id": "10200",
+          "statusCategory": {
+            "self": "https://jira.test.jp/rest/api/2/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "12941",
+      "self": "https://jira.test.jp/rest/api/2/issue/12941",
+      "key": "TEST-1812",
+      "fields": {
+        "summary": "[Sidekiq][MyContents][ContentsManagement] Add more mime types for psd files",
+        "issuetype": {
+          "self": "https://jira.test.jp/rest/api/2/issuetype/10002",
+          "id": "10002",
+          "description": "A task that needs to be done.",
+          "iconUrl": "https://jira.test.jp/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318
+        },
+        "customfield_10101": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@44c07ead[id=1,rapidViewId=1,state=ACTIVE,name=sprint_2019_12_02 ~ 2019_12_13,startDate=2019-12-02T10:01:44.048+07:00,endDate=2019-12-15T13:58:00.000+07:00,completeDate=<null>,sequence=1,goal=]"
+        ],
+        "timetracking": {
+          "originalEstimate": "1h",
+          "remainingEstimate": "0m",
+          "timeSpent": "1h",
+          "originalEstimateSeconds": 3600,
+          "remainingEstimateSeconds": 0,
+          "timeSpentSeconds": 3600
+        },
+        "status": {
+          "self": "https://jira.test.jp/rest/api/2/status/10200",
+          "description": "This status is managed internally by Jira Software",
+          "iconUrl": "https://jira.test.jp/",
+          "name": "Review",
+          "id": "10200",
+          "statusCategory": {
+            "self": "https://jira.test.jp/rest/api/2/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "12935",
+      "self": "https://jira.test.jp/rest/api/2/issue/12935",
+      "key": "TEST-1806",
+      "fields": {
+        "summary": "[MyContents][ContentsManagement] Add more mime types for psd files",
+        "issuetype": {
+          "self": "https://jira.test.jp/rest/api/2/issuetype/10002",
+          "id": "10002",
+          "description": "A task that needs to be done.",
+          "iconUrl": "https://jira.test.jp/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318
+        },
+        "customfield_10101": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@44c07ead[id=1,rapidViewId=1,state=ACTIVE,name=sprint_2019_12_02 ~ 2019_12_13,startDate=2019-12-02T10:01:44.048+07:00,endDate=2019-12-15T13:58:00.000+07:00,completeDate=<null>,sequence=1,goal=]"
+        ],
+        "timetracking": {
+          "originalEstimate": "6h",
+          "remainingEstimate": "5h",
+          "timeSpent": "1h",
+          "originalEstimateSeconds": 21600,
+          "remainingEstimateSeconds": 18000,
+          "timeSpentSeconds": 3600
+        },
+        "status": {
+          "self": "https://jira.test.jp/rest/api/2/status/10200",
+          "description": "This status is managed internally by Jira Software",
+          "iconUrl": "https://jira.test.jp/",
+          "name": "Review",
+          "id": "10200",
+          "statusCategory": {
+            "self": "https://jira.test.jp/rest/api/2/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "12928",
+      "self": "https://jira.test.jp/rest/api/2/issue/12928",
+      "key": "TEST-1801",
+      "fields": {
+        "summary": "[DownloadContent][BE] Username in filename is not encoded in ShiftJIS",
+        "issuetype": {
+          "self": "https://jira.test.jp/rest/api/2/issuetype/10004",
+          "id": "10004",
+          "description": "A problem which impairs or prevents the functions of the product.",
+          "iconUrl": "https://jira.test.jp/secure/viewavatar?size=xsmall&avatarId=10303&avatarType=issuetype",
+          "name": "Bug",
+          "subtask": false,
+          "avatarId": 10303
+        },
+        "customfield_10101": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@44c07ead[id=1,rapidViewId=1,state=ACTIVE,name=sprint_2019_12_02 ~ 2019_12_13,startDate=2019-12-02T10:01:44.048+07:00,endDate=2019-12-15T13:58:00.000+07:00,completeDate=<null>,sequence=1,goal=]"
+        ],
+        "timetracking": {
+          "originalEstimate": "3h",
+          "remainingEstimate": "0m",
+          "timeSpent": "3h",
+          "originalEstimateSeconds": 10800,
+          "remainingEstimateSeconds": 0,
+          "timeSpentSeconds": 10800
+        },
+        "status": {
+          "self": "https://jira.test.jp/rest/api/2/status/10300",
+          "description": "Ready for deploy to dev",
+          "iconUrl": "https://jira.test.jp/images/icons/statuses/generic.png",
+          "name": "Ready For Deploy",
+          "id": "10300",
+          "statusCategory": {
+            "self": "https://jira.test.jp/rest/api/2/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "12874",
+      "self": "https://jira.test.jp/rest/api/2/issue/12874",
+      "key": "TEST-1757",
+      "fields": {
+        "summary": "[VirusCheck][DeepSecurity][BE] Implement process to push a job to sidekiq server from application server",
+        "issuetype": {
+          "self": "https://jira.test.jp/rest/api/2/issuetype/10002",
+          "id": "10002",
+          "description": "A task that needs to be done.",
+          "iconUrl": "https://jira.test.jp/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318
+        },
+        "customfield_10101": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@44c07ead[id=1,rapidViewId=1,state=ACTIVE,name=sprint_2019_12_02 ~ 2019_12_13,startDate=2019-12-02T10:01:44.048+07:00,endDate=2019-12-15T13:58:00.000+07:00,completeDate=<null>,sequence=1,goal=]"
+        ],
+        "timetracking": {
+          "originalEstimate": "1d",
+          "remainingEstimate": "0m",
+          "timeSpent": "1d 6h",
+          "originalEstimateSeconds": 28800,
+          "remainingEstimateSeconds": 0,
+          "timeSpentSeconds": 50400
+        },
+        "status": {
+          "self": "https://jira.test.jp/rest/api/2/status/3",
+          "description": "This issue is being actively worked on at the moment by the assignee.",
+          "iconUrl": "https://jira.test.jp/images/icons/statuses/inprogress.png",
+          "name": "In Progress",
+          "id": "3",
+          "statusCategory": {
+            "self": "https://jira.test.jp/rest/api/2/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "12850",
+      "self": "https://jira.test.jp/rest/api/2/issue/12850",
+      "key": "TEST-1739",
+      "fields": {
+        "summary": "[UserGroupsManagement][BE] Modify controller to load user group with ajax",
+        "issuetype": {
+          "self": "https://jira.test.jp/rest/api/2/issuetype/10002",
+          "id": "10002",
+          "description": "A task that needs to be done.",
+          "iconUrl": "https://jira.test.jp/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318
+        },
+        "customfield_10101": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@44c07ead[id=1,rapidViewId=1,state=ACTIVE,name=sprint_2019_12_02 ~ 2019_12_13,startDate=2019-12-02T10:01:44.048+07:00,endDate=2019-12-15T13:58:00.000+07:00,completeDate=<null>,sequence=1,goal=]"
+        ],
+        "timetracking": {
+          "originalEstimate": "6h",
+          "remainingEstimate": "0m",
+          "timeSpent": "6h",
+          "originalEstimateSeconds": 21600,
+          "remainingEstimateSeconds": 0,
+          "timeSpentSeconds": 21600
+        },
+        "status": {
+          "self": "https://jira.test.jp/rest/api/2/status/10208",
+          "description": "This status is managed internally by Jira Software",
+          "iconUrl": "https://jira.test.jp/",
+          "name": "Ready For Release",
+          "id": "10208",
+          "statusCategory": {
+            "self": "https://jira.test.jp/rest/api/2/statuscategory/3",
+            "id": 3,
+            "key": "done",
+            "colorName": "green",
+            "name": "Done"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "12826",
+      "self": "https://jira.test.jp/rest/api/2/issue/12826",
+      "key": "TEST-1720",
+      "fields": {
+        "summary": "[Download][BE] Improve content downloading",
+        "issuetype": {
+          "self": "https://jira.test.jp/rest/api/2/issuetype/10002",
+          "id": "10002",
+          "description": "A task that needs to be done.",
+          "iconUrl": "https://jira.test.jp/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318
+        },
+        "customfield_10101": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@44c07ead[id=1,rapidViewId=1,state=ACTIVE,name=sprint_2019_12_02 ~ 2019_12_13,startDate=2019-12-02T10:01:44.048+07:00,endDate=2019-12-15T13:58:00.000+07:00,completeDate=<null>,sequence=1,goal=]"
+        ],
+        "timetracking": {
+          "originalEstimate": "1d 2h",
+          "remainingEstimate": "0m",
+          "timeSpent": "1d 3h 30m",
+          "originalEstimateSeconds": 36000,
+          "remainingEstimateSeconds": 0,
+          "timeSpentSeconds": 41400
+        },
+        "status": {
+          "self": "https://jira.test.jp/rest/api/2/status/10205",
+          "description": "This status is managed internally by Jira Software",
+          "iconUrl": "https://jira.test.jp/",
+          "name": "Ready For Test",
+          "id": "10205",
+          "statusCategory": {
+            "self": "https://jira.test.jp/rest/api/2/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "12622",
+      "self": "https://jira.test.jp/rest/api/2/issue/12622",
+      "key": "TEST-1555",
+      "fields": {
+        "summary": "[SearchResult][BE] Modify returned Json to follow Json API format",
+        "issuetype": {
+          "self": "https://jira.test.jp/rest/api/2/issuetype/10002",
+          "id": "10002",
+          "description": "A task that needs to be done.",
+          "iconUrl": "https://jira.test.jp/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318
+        },
+        "customfield_10101": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@44c07ead[id=1,rapidViewId=1,state=ACTIVE,name=sprint_2019_12_02 ~ 2019_12_13,startDate=2019-12-02T10:01:44.048+07:00,endDate=2019-12-15T13:58:00.000+07:00,completeDate=<null>,sequence=1,goal=]"
+        ],
+        "timetracking": {
+          "originalEstimate": "1d 6h",
+          "remainingEstimate": "0m",
+          "timeSpent": "1d 6h",
+          "originalEstimateSeconds": 50400,
+          "remainingEstimateSeconds": 0,
+          "timeSpentSeconds": 50400
+        },
+        "status": {
+          "self": "https://jira.test.jp/rest/api/2/status/10208",
+          "description": "This status is managed internally by Jira Software",
+          "iconUrl": "https://jira.test.jp/",
+          "name": "Ready For Release",
+          "id": "10208",
+          "statusCategory": {
+            "self": "https://jira.test.jp/rest/api/2/statuscategory/3",
+            "id": 3,
+            "key": "done",
+            "colorName": "green",
+            "name": "Done"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "12582",
+      "self": "https://jira.test.jp/rest/api/2/issue/12582",
+      "key": "TEST-1524",
+      "fields": {
+        "summary": "[BE][VirusCheck][Sidekiq] Create job to update security status",
+        "issuetype": {
+          "self": "https://jira.test.jp/rest/api/2/issuetype/10002",
+          "id": "10002",
+          "description": "A task that needs to be done.",
+          "iconUrl": "https://jira.test.jp/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318
+        },
+        "customfield_10101": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@44c07ead[id=1,rapidViewId=1,state=ACTIVE,name=sprint_2019_12_02 ~ 2019_12_13,startDate=2019-12-02T10:01:44.048+07:00,endDate=2019-12-15T13:58:00.000+07:00,completeDate=<null>,sequence=1,goal=]"
+        ],
+        "timetracking": {
+          "originalEstimate": "5h",
+          "remainingEstimate": "4h",
+          "timeSpent": "1h",
+          "originalEstimateSeconds": 18000,
+          "remainingEstimateSeconds": 14400,
+          "timeSpentSeconds": 3600
+        },
+        "status": {
+          "self": "https://jira.test.jp/rest/api/2/status/10200",
+          "description": "This status is managed internally by Jira Software",
+          "iconUrl": "https://jira.test.jp/",
+          "name": "Review",
+          "id": "10200",
+          "statusCategory": {
+            "self": "https://jira.test.jp/rest/api/2/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "12579",
+      "self": "https://jira.test.jp/rest/api/2/issue/12579",
+      "key": "TEST-1521",
+      "fields": {
+        "summary": "[BE][VirusCheck] Update schema file",
+        "issuetype": {
+          "self": "https://jira.test.jp/rest/api/2/issuetype/10002",
+          "id": "10002",
+          "description": "A task that needs to be done.",
+          "iconUrl": "https://jira.test.jp/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318
+        },
+        "customfield_10101": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@44c07ead[id=1,rapidViewId=1,state=ACTIVE,name=sprint_2019_12_02 ~ 2019_12_13,startDate=2019-12-02T10:01:44.048+07:00,endDate=2019-12-15T13:58:00.000+07:00,completeDate=<null>,sequence=1,goal=]"
+        ],
+        "timetracking": {
+          "originalEstimate": "1h",
+          "remainingEstimate": "0m",
+          "timeSpent": "3h 30m",
+          "originalEstimateSeconds": 3600,
+          "remainingEstimateSeconds": 0,
+          "timeSpentSeconds": 12600
+        },
+        "status": {
+          "self": "https://jira.test.jp/rest/api/2/status/10300",
+          "description": "Ready for deploy to dev",
+          "iconUrl": "https://jira.test.jp/images/icons/statuses/generic.png",
+          "name": "Ready For Deploy",
+          "id": "10300",
+          "statusCategory": {
+            "self": "https://jira.test.jp/rest/api/2/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "12554",
+      "self": "https://jira.test.jp/rest/api/2/issue/12554",
+      "key": "TEST-1497",
+      "fields": {
+        "summary": "[Sidekiq][BE] Update CreateVersionsJob to handle scanning contents only",
+        "issuetype": {
+          "self": "https://jira.test.jp/rest/api/2/issuetype/10002",
+          "id": "10002",
+          "description": "A task that needs to be done.",
+          "iconUrl": "https://jira.test.jp/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318
+        },
+        "customfield_10101": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@44c07ead[id=1,rapidViewId=1,state=ACTIVE,name=sprint_2019_12_02 ~ 2019_12_13,startDate=2019-12-02T10:01:44.048+07:00,endDate=2019-12-15T13:58:00.000+07:00,completeDate=<null>,sequence=1,goal=]"
+        ],
+        "timetracking": {
+          "originalEstimate": "1h",
+          "remainingEstimate": "0m",
+          "timeSpent": "4h",
+          "originalEstimateSeconds": 3600,
+          "remainingEstimateSeconds": 0,
+          "timeSpentSeconds": 14400
+        },
+        "status": {
+          "self": "https://jira.test.jp/rest/api/2/status/10000",
+          "description": "",
+          "iconUrl": "https://jira.test.jp/",
+          "name": "To Do",
+          "id": "10000",
+          "statusCategory": {
+            "self": "https://jira.test.jp/rest/api/2/statuscategory/2",
+            "id": 2,
+            "key": "new",
+            "colorName": "blue-gray",
+            "name": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "12545",
+      "self": "https://jira.test.jp/rest/api/2/issue/12545",
+      "key": "TEST-1494",
+      "fields": {
+        "summary": "[BE][VirusCheck] Disable file processing when a content is created",
+        "issuetype": {
+          "self": "https://jira.test.jp/rest/api/2/issuetype/10002",
+          "id": "10002",
+          "description": "A task that needs to be done.",
+          "iconUrl": "https://jira.test.jp/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318
+        },
+        "customfield_10101": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@44c07ead[id=1,rapidViewId=1,state=ACTIVE,name=sprint_2019_12_02 ~ 2019_12_13,startDate=2019-12-02T10:01:44.048+07:00,endDate=2019-12-15T13:58:00.000+07:00,completeDate=<null>,sequence=1,goal=]"
+        ],
+        "timetracking": {
+          "originalEstimate": "4h",
+          "remainingEstimate": "0m",
+          "timeSpent": "2d 4h",
+          "originalEstimateSeconds": 14400,
+          "remainingEstimateSeconds": 0,
+          "timeSpentSeconds": 72000
+        },
+        "status": {
+          "self": "https://jira.test.jp/rest/api/2/status/10300",
+          "description": "Ready for deploy to dev",
+          "iconUrl": "https://jira.test.jp/images/icons/statuses/generic.png",
+          "name": "Ready For Deploy",
+          "id": "10300",
+          "statusCategory": {
+            "self": "https://jira.test.jp/rest/api/2/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "12026",
+      "self": "https://jira.test.jp/rest/api/2/issue/12026",
+      "key": "TEST-1178",
+      "fields": {
+        "summary": "[BE] Investigate where inefficient process to check permission for a group of object",
+        "issuetype": {
+          "self": "https://jira.test.jp/rest/api/2/issuetype/10003",
+          "id": "10003",
+          "description": "The sub-task of the issue",
+          "iconUrl": "https://jira.test.jp/secure/viewavatar?size=xsmall&avatarId=10316&avatarType=issuetype",
+          "name": "Sub-task",
+          "subtask": true,
+          "avatarId": 10316
+        },
+        "customfield_10101": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@44c07ead[id=1,rapidViewId=1,state=ACTIVE,name=sprint_2019_12_02 ~ 2019_12_13,startDate=2019-12-02T10:01:44.048+07:00,endDate=2019-12-15T13:58:00.000+07:00,completeDate=<null>,sequence=1,goal=]"
+        ],
+        "timetracking": {
+          "originalEstimate": "3h",
+          "remainingEstimate": "0m",
+          "timeSpent": "3h",
+          "originalEstimateSeconds": 10800,
+          "remainingEstimateSeconds": 0,
+          "timeSpentSeconds": 10800
+        },
+        "status": {
+          "self": "https://jira.test.jp/rest/api/2/status/10209",
+          "description": "This status is managed internally by Jira Software",
+          "iconUrl": "https://jira.test.jp/",
+          "name": "Released",
+          "id": "10209",
+          "statusCategory": {
+            "self": "https://jira.test.jp/rest/api/2/statuscategory/3",
+            "id": 3,
+            "key": "done",
+            "colorName": "green",
+            "name": "Done"
+          }
+        }
+      }
+    }
+  ]
+}

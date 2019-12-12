@@ -1,0 +1,10 @@
+{
+  "id": 1,
+  "self": "https://jira.test.jp/rest/agile/1.0/sprint/24",
+  "state": "active",
+  "name": "sprint_2019_12_02 ~ 2019_12_13",
+  "startDate": "2019-12-02T10:01:44.048+07:00",
+  "endDate": "2019-12-15T13:58:00.000+07:00",
+  "originBoardId": 1,
+  "goal": ""
+}

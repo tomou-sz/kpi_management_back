@@ -19,14 +19,20 @@ development:
   DATABASE_NAME: 'database_name'
   DATABASE_PORT: '3306'
   REDIS_CLUSTER_URL: 'redis://localhost:6379'
+  REDIS_CLUSTER_NAME_SPACE: 'cluster_name_space'
 
 test:
   <<: *defaults
   ENDPOINT: 'http://localhost:3000'
+  # Jira config
+  JIRA_USERNAME: 'Test'
+  JIRA_PASSWORD: 'password'
+  JIRA_SITE: 'https://jira.test.jp'
   # Database config
   DATABASE_NAME: 'database_name'
   DATABASE_PORT: '3306'
   REDIS_CLUSTER_URL: 'redis://localhost:6379'
+  REDIS_CLUSTER_NAME_SPACE: 'cluster_name_space'
 
 production:
   <<: *defaults
@@ -39,3 +45,4 @@ production:
   DATABASE_PASSWORD: '<database_></database_>'
   DATSBASE_URL: 'postgres://<username>:<password>@<host>:<port>/<database>'
   REDIS_CLUSTER_URL: 'redis://localhost:6379'
+  REDIS_CLUSTER_NAME_SPACE: 'cluster_name_space'

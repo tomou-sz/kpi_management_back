@@ -7,7 +7,7 @@ class ProductivitiesController < ApplicationController
     @sprint_productivity =
       Rails.cache.fetch("sprint_productivity_user_id_#{user_id}_sprint_id_#{sprint_id}") do
         user = User.find_by(id: user_id)
-        return response_not_found(user.class.name) if user.blank?
+        return response_not_found("user") if user.blank?
 
         @jira_id = user.jira_id
         return response_bad_request if @jira_id.blank? || sprint_id.blank?
@@ -28,7 +28,7 @@ class ProductivitiesController < ApplicationController
           sprint_productivity_hash[:kpi][:main].merge!(main_development_kpi_attributes(development_issues))
           # Review
           review_issues = @client.Issue.jql(
-            'Sprint = 21 AND assignee in (t.shida) AND labels in (Review)',
+            "Sprint = #{sprint_id} AND assignee in (#{@jira_id}) AND labels in (#{ENV['JIRA_REVIEW_LABEL']})",
             fields:[:key, :summary, :issuetype, :status, :timetracking, :customfield_10101, :worklog],
             max_results: 5000,
             start_index:0
@@ -36,10 +36,10 @@ class ProductivitiesController < ApplicationController
           sprint_productivity_hash[:kpi][:main].merge!(main_revierw_kpi_attribtues(review_issues))
           # Others projects
           other_projects_issues = @client.Issue.jql(
-            "Project != '#{ENV['JIRA_MAIN_PROJECT_KEY']}' AND assignee = #{@jira_id} AND
-            worklogDate >= '#{@sprint_start_date.to_s.gsub('-', '/')}' AND
-            worklogDate <= '#{@sprint_end_date.to_s.gsub('-', '/')}' AND
-            worklogAuthor = #{@jira_id}",
+            ("Project != '#{ENV['JIRA_MAIN_PROJECT_KEY']}' AND assignee = #{@jira_id} AND \
+            worklogDate >= '#{@sprint_start_date.to_s.gsub('-', '/')}' AND \
+            worklogDate <= '#{@sprint_end_date.to_s.gsub('-', '/')}' AND \
+            worklogAuthor = #{@jira_id}").squeeze(" "),
             fields:[:key, :timetracking, :worklog],
             max_results: 5000,
             start_index:0
@@ -99,7 +99,7 @@ class ProductivitiesController < ApplicationController
 
   def main_revierw_kpi_attribtues(issues)
     review_time_spend_total = 0
-    issues.each { |issue| review_time_spend_total += issue.attrs['fields']['timetracking']['timeSpentSeconds'] }
+    issues.each { |issue| review_time_spend_total += issue.attrs['fields']['timetracking']['timeSpentSeconds'] || 0 }
     { review_time_spend_total: review_time_spend_total }
   end
 
@@ -108,7 +108,7 @@ class ProductivitiesController < ApplicationController
     issues.each do |issue|
       issue.attrs['fields']['worklog']['worklogs'].each do |work_log|
         if work_log['author']['key'] == @jira_id && (@sprint_start_date..@sprint_end_date).include?(work_log['started'].to_date)
-          work_logs_total += work_log['timeSpentSeconds']
+          work_logs_total += work_log['timeSpentSeconds'] || 0
         end
       end
     end
