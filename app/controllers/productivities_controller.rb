@@ -7,7 +7,7 @@ class ProductivitiesController < ApplicationController
     @sprint_productivity =
       Rails.cache.fetch("sprint_productivity_user_id_#{user_id}_sprint_id_#{sprint_id}") do
         user = User.find_by(id: user_id)
-        return response_not_found(user.class.name) if user.blank?
+        return response_not_found("user") if user.blank?
 
         @jira_id = user.jira_id
         return response_bad_request if @jira_id.blank? || sprint_id.blank?
