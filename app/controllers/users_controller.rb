@@ -56,7 +56,10 @@ class UsersController < ApplicationController
     ticket_fields[:original_estimate_seconds] = issue_fields["timetracking"]["originalEstimateSeconds"]
     ticket_fields[:remaining_estimate_seconds] = issue_fields["timetracking"]["remainingEstimateSeconds"]
     ticket_fields[:time_spent_seconds] = issue_fields["timetracking"]["timeSpentSeconds"]
-    ticket_fields[:status_key] = issue_fields["status"]["statusCategory"]["key"]
+    ticket_fields[:status] = {
+      key: issue_fields["status"]["statusCategory"]["key"],
+      name: issue_fields["status"]["name"]
+    }
     ticket_fields
   end
 end
