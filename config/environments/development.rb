@@ -27,7 +27,7 @@ Rails.application.configure do
   #   config.cache_store = :null_store
   # end
   # Redis Config
-  config.cache_store = :redis_store, { url: ENV['REDIS_CLUSTER_URL'] }, { expires_in: 5.minutes }
+  config.cache_store = :redis_store, { namespace: ENV['REDIS_CLUSTER_NAME_SPACE'] }, { url: ENV['REDIS_CLUSTER_URL'] }, { expires_in: 5.minutes }
   config.action_controller.perform_caching = true
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
