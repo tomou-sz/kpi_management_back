@@ -99,7 +99,7 @@ class ProductivitiesController < ApplicationController
 
   def main_revierw_kpi_attribtues(issues)
     review_time_spend_total = 0
-    issues.each { |issue| review_time_spend_total += issue.attrs['fields']['timetracking']['timeSpentSeconds'] }
+    issues.each { |issue| review_time_spend_total += issue.attrs['fields']['timetracking']['timeSpentSeconds'] || 0 }
     { review_time_spend_total: review_time_spend_total }
   end
 
@@ -108,7 +108,7 @@ class ProductivitiesController < ApplicationController
     issues.each do |issue|
       issue.attrs['fields']['worklog']['worklogs'].each do |work_log|
         if work_log['author']['key'] == @jira_id && (@sprint_start_date..@sprint_end_date).include?(work_log['started'].to_date)
-          work_logs_total += work_log['timeSpentSeconds']
+          work_logs_total += work_log['timeSpentSeconds'] || 0
         end
       end
     end
