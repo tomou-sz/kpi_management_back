@@ -1,0 +1,55 @@
+{
+  "maxResults": 50,
+  "startAt": 0,
+  "isLast": true,
+  "values": [
+    {
+      "id": 1,
+      "self": "https://jira.test.jp/rest/agile/1.0/sprint/1",
+      "state": "closed",
+      "name": "sprint_2019_03_04 ~ 2019_03_15",
+      "startDate": "2019-03-04T18:17:58.700+07:00",
+      "endDate": "2019-03-17T23:59:59.000+07:00",
+      "completeDate": "2019-03-18T12:32:38.380+07:00",
+      "originBoardId": 1,
+      "goal": ""
+    },
+    {
+      "id": 2,
+      "self": "https://jira.test.jp/rest/agile/1.0/sprint/2",
+      "state": "closed",
+      "name": "sprint_2019_03_18 ~ 2019_04_01",
+      "startDate": "2019-03-18T12:32:47.233+07:00",
+      "endDate": "2019-04-01T23:59:00.000+07:00",
+      "completeDate": "2019-04-01T16:31:28.853+07:00",
+      "originBoardId": 1
+    },
+    {
+      "id": 3,
+      "self": "https://jira.test.jp/rest/agile/1.0/sprint/3",
+      "state": "closed",
+      "name": "sprint_2019_04_02 ~ 2019_04_12",
+      "startDate": "2019-04-02T00:01:00.000+07:00",
+      "endDate": "2019-04-14T03:58:00.000+07:00",
+      "completeDate": "2019-04-16T11:00:28.158+07:00",
+      "originBoardId": 1
+    },
+    {
+      "id": 4,
+      "self": "https://jira.test.jp/rest/agile/1.0/sprint/4",
+      "state": "active",
+      "name": "sprint_2019_12_02 ~ 2019_12_13",
+      "startDate": "2019-12-02T10:01:44.048+07:00",
+      "endDate": "2019-12-15T13:58:00.000+07:00",
+      "originBoardId": 1,
+      "goal": ""
+    },
+    {
+      "id": 5,
+      "self": "https://jira.test.jp/rest/agile/1.0/sprint/5",
+      "state": "future",
+      "name": "sprint_2019_12_16 ~ 2019_12_27",
+      "originBoardId": 1
+    }
+  ]
+}

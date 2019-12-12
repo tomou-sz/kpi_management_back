@@ -1,0 +1,190 @@
+{
+  "expand": "schema,names",
+  "startAt": 0,
+  "maxResults": 50,
+  "total": 2,
+  "issues": [
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "12909",
+      "self": "https://jira.test.jp/rest/api/2/issue/12909",
+      "key": "TEST-1782",
+      "fields": {
+        "summary": "[SignInOut][Bug][BE] Signout action raise errors when session has already been destroyed",
+        "issuetype": {
+          "self": "https://jira.test.jp/rest/api/2/issuetype/10004",
+          "id": "10004",
+          "description": "A problem which impairs or prevents the functions of the product.",
+          "iconUrl": "https://jira.test.jp/secure/viewavatar?size=xsmall&avatarId=10303&avatarType=issuetype",
+          "name": "Bug",
+          "subtask": false,
+          "avatarId": 10303
+        },
+        "worklog": {
+          "startAt": 0,
+          "maxResults": 20,
+          "total": 1,
+          "worklogs": [
+            {
+              "self": "https://jira.test.jp/rest/api/2/issue/12909/worklog/14639",
+              "author": {
+                "self": "https://jira.test.jp/rest/api/2/user?username=test",
+                "name": "test",
+                "key": "test",
+                "emailAddress": "test@sample.com",
+                "avatarUrls": {
+                  "48x48": "https://jira.test.jp/secure/useravatar?ownerId=test&avatarId=10601",
+                  "24x24": "https://jira.test.jp/secure/useravatar?size=small&ownerId=test&avatarId=10601",
+                  "16x16": "https://jira.test.jp/secure/useravatar?size=xsmall&ownerId=test&avatarId=10601",
+                  "32x32": "https://jira.test.jp/secure/useravatar?size=medium&ownerId=test&avatarId=10601"
+                },
+                "displayName": "Test",
+                "active": true,
+                "timeZone": "Asia/Ho_Chi_Minh"
+              },
+              "updateAuthor": {
+                "self": "https://jira.test.jp/rest/api/2/user?username=test",
+                "name": "test",
+                "key": "test",
+                "emailAddress": "test@sample.com",
+                "avatarUrls": {
+                  "48x48": "https://jira.test.jp/secure/useravatar?ownerId=test&avatarId=10601",
+                  "24x24": "https://jira.test.jp/secure/useravatar?size=small&ownerId=test&avatarId=10601",
+                  "16x16": "https://jira.test.jp/secure/useravatar?size=xsmall&ownerId=test&avatarId=10601",
+                  "32x32": "https://jira.test.jp/secure/useravatar?size=medium&ownerId=test&avatarId=10601"
+                },
+                "displayName": "Test",
+                "active": true,
+                "timeZone": "Asia/Ho_Chi_Minh"
+              },
+              "comment": "",
+              "created": "2019-12-10T09:56:02.000+0700",
+              "updated": "2019-12-10T09:56:02.000+0700",
+              "started": "2019-12-10T09:55:00.000+0700",
+              "timeSpent": "1h",
+              "timeSpentSeconds": 3600,
+              "id": "14639",
+              "issueId": "12909"
+            }
+          ]
+        },
+        "customfield_10101": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@6fe1e429[id=1,rapidViewId=1,state=ACTIVE,name=sprint_2019_12_02 ~ 2019_12_13,startDate=2019-12-02T10:01:44.048+07:00,endDate=2019-12-15T13:58:00.000+07:00,completeDate=<null>,sequence=1,goal=]"
+        ],
+        "timetracking": {
+          "originalEstimate": "1h",
+          "remainingEstimate": "0m",
+          "timeSpent": "1h",
+          "originalEstimateSeconds": 3600,
+          "remainingEstimateSeconds": 0,
+          "timeSpentSeconds": 3600
+        },
+        "status": {
+          "self": "https://jira.test.jp/rest/api/2/status/10208",
+          "description": "This status is managed internally by Jira Software",
+          "iconUrl": "https://jira.test.jp/",
+          "name": "Ready For Release",
+          "id": "10208",
+          "statusCategory": {
+            "self": "https://jira.test.jp/rest/api/2/statuscategory/3",
+            "id": 3,
+            "key": "done",
+            "colorName": "green",
+            "name": "Done"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "12856",
+      "self": "https://jira.test.jp/rest/api/2/issue/12856",
+      "key": "TEST-1743",
+      "fields": {
+        "summary": "[BE][ShareContentCMS] Set allow iframe for shared URL",
+        "issuetype": {
+          "self": "https://jira.test.jp/rest/api/2/issuetype/10002",
+          "id": "10002",
+          "description": "A task that needs to be done.",
+          "iconUrl": "https://jira.test.jp/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318
+        },
+        "worklog": {
+          "startAt": 0,
+          "maxResults": 20,
+          "total": 1,
+          "worklogs": [
+            {
+              "self": "https://jira.test.jp/rest/api/2/issue/12856/worklog/14536",
+              "author": {
+                "self": "https://jira.test.jp/rest/api/2/user?username=test",
+                "name": "test",
+                "key": "test",
+                "emailAddress": "test@sample.com",
+                "avatarUrls": {
+                  "48x48": "https://jira.test.jp/secure/useravatar?ownerId=test&avatarId=10601",
+                  "24x24": "https://jira.test.jp/secure/useravatar?size=small&ownerId=test&avatarId=10601",
+                  "16x16": "https://jira.test.jp/secure/useravatar?size=xsmall&ownerId=test&avatarId=10601",
+                  "32x32": "https://jira.test.jp/secure/useravatar?size=medium&ownerId=test&avatarId=10601"
+                },
+                "displayName": "Test",
+                "active": true,
+                "timeZone": "Asia/Ho_Chi_Minh"
+              },
+              "updateAuthor": {
+                "self": "https://jira.test.jp/rest/api/2/user?username=test",
+                "name": "test",
+                "key": "test",
+                "emailAddress": "test@sample.com",
+                "avatarUrls": {
+                  "48x48": "https://jira.test.jp/secure/useravatar?ownerId=test&avatarId=10601",
+                  "24x24": "https://jira.test.jp/secure/useravatar?size=small&ownerId=test&avatarId=10601",
+                  "16x16": "https://jira.test.jp/secure/useravatar?size=xsmall&ownerId=test&avatarId=10601",
+                  "32x32": "https://jira.test.jp/secure/useravatar?size=medium&ownerId=test&avatarId=10601"
+                },
+                "displayName": "Test",
+                "active": true,
+                "timeZone": "Asia/Ho_Chi_Minh"
+              },
+              "comment": "",
+              "created": "2019-12-03T16:19:50.000+0700",
+              "updated": "2019-12-03T16:19:50.000+0700",
+              "started": "2019-12-03T16:19:00.000+0700",
+              "timeSpent": "2h",
+              "timeSpentSeconds": 7200,
+              "id": "14536",
+              "issueId": "12856"
+            }
+          ]
+        },
+        "customfield_10101": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@6fe1e429[id=1,rapidViewId=1,state=ACTIVE,name=sprint_2019_12_02 ~ 2019_12_13,startDate=2019-12-02T10:01:44.048+07:00,endDate=2019-12-15T13:58:00.000+07:00,completeDate=<null>,sequence=1,goal=]"
+        ],
+        "timetracking": {
+          "originalEstimate": "2h",
+          "remainingEstimate": "0m",
+          "timeSpent": "2h",
+          "originalEstimateSeconds": 7200,
+          "remainingEstimateSeconds": 0,
+          "timeSpentSeconds": 7200
+        },
+        "status": {
+          "self": "https://jira.test.jp/rest/api/2/status/10204",
+          "description": "This status is managed internally by Jira Software",
+          "iconUrl": "https://jira.test.jp/",
+          "name": "In Testing",
+          "id": "10204",
+          "statusCategory": {
+            "self": "https://jira.test.jp/rest/api/2/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        }
+      }
+    }
+  ]
+}

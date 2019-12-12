@@ -1,0 +1,6 @@
+{
+	"id": 1,
+	"self": "https://jira.test.jp/rest/agile/1.0/board/1",
+	"name": "TEST Kanban",
+	"type": "scrum"
+}

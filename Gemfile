@@ -47,6 +47,8 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-remote'
   gem 'pry-stack_explorer'
+
+  gem 'rspec-rails', '~> 3.8'
 end
 
 
@@ -56,6 +58,13 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'redis-rails'
+end
+
+group :test do
+  gem 'webmock'
+  gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner'
 end
 
 group :production do
