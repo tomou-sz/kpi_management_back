@@ -28,7 +28,7 @@ class ProductivitiesController < ApplicationController
           sprint_productivity_hash[:kpi][:main].merge!(main_development_kpi_attributes(development_issues))
           # Review
           review_issues = @client.Issue.jql(
-            'Sprint = 21 AND assignee in (t.shida) AND labels in (Review)',
+            "Sprint = #{sprint_id} AND assignee in (#{@jira_id}) AND labels in (#{ENV['JIRA_REVIEW_LABEL']})",
             fields:[:key, :summary, :issuetype, :status, :timetracking, :customfield_10101, :worklog],
             max_results: 5000,
             start_index:0
