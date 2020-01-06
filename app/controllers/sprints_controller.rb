@@ -12,6 +12,7 @@ class SprintsController < ApplicationController
             sprint_attrs = sprint.attrs
             {
               id: sprint_attrs['id'],
+              name: sprint_attrs['name'],
               state: sprint_attrs['state'],
               start_date: sprint_attrs['startDate'],
               end_date: sprint_attrs['endDate']

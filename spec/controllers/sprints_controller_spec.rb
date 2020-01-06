@@ -24,6 +24,7 @@ RSpec.describe SprintsController, :type => :controller do
         expect(json_data.count).to eq test_data.count
 
         json_data.each_with_index do |data, i|
+          expect(data["name"]).to eq test_data[i]["name"]
           expect(data["state"]).to eq test_data[i]["state"]
           if data["state"] == "closed" || data["state"] == "active"
             expect(data["start_date"]).to eq test_data[i]["startDate"]
