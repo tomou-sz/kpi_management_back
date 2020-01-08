@@ -82,11 +82,11 @@ class ProductivitiesController < ApplicationController
     work_logs.each do |work_log|
       log_at = work_log['started'].to_date
       time_spent_seconds = work_log['timeSpentSeconds'] || 0
-      if work_log['author']['key'] == @jira_id && log_at < @sprint_start_date
+      if work_log['author']['name'] == @jira_id && log_at < @sprint_start_date
         carried_over_logs_total += time_spent_seconds
-      elsif work_log['author']['key'] == @jira_id && log_at > @sprint_end_date
+      elsif work_log['author']['name'] == @jira_id && log_at > @sprint_end_date
         do_over_logs_total += time_spent_seconds
-      elsif work_log['author']['key'] == @jira_id
+      elsif work_log['author']['name'] == @jira_id
         sprint_work_logs_total += time_spent_seconds
       end
     end
