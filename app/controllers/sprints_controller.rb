@@ -8,8 +8,10 @@ class SprintsController < ApplicationController
       @board_sprints =
         Rails.cache.fetch("sprint_productivity_board_id_#{board_id}") do
           board = @client.Board.find(board_id)
-          board.sprints.map do |sprint|
+          sprints = board.sprints.map do |sprint|
             sprint_attrs = sprint.attrs
+            next if sprint_attrs['state'] == 'future'
+
             {
               id: sprint_attrs['id'],
               name: sprint_attrs['name'],
@@ -18,6 +20,7 @@ class SprintsController < ApplicationController
               end_date: sprint_attrs['endDate']
             }
           end
+          sprints.compact
         end
       response_success(self.class.name, self.action_name, @board_sprints)
     end
