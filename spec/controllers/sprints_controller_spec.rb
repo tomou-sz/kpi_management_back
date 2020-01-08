@@ -21,7 +21,8 @@ RSpec.describe SprintsController, :type => :controller do
         expect(response.status).to eq 200
         json_data = JSON.parse(response.body)["data"]
         test_data = JSON.parse(File.read("#{Rails.root}/spec/fixtures/jira/rest/agile/1.0/board_key_sprint_response.json"))["values"]
-        expect(json_data.count).to eq test_data.count
+        # future sprint is not collected
+        expect(json_data.count).to eq test_data.count - 1
 
         json_data.each_with_index do |data, i|
           expect(data["name"]).to eq test_data[i]["name"]
