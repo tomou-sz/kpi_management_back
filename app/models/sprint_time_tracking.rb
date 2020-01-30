@@ -1,0 +1,2 @@
+class SprintTimeTracking < ApplicationRecord
+end

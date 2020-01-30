@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   end
 
   resource :reports do
-    post :save_sprint_remaining_time
-    get :total_sprint_remaining_time
+    post :save_sprint_time_tracking
+    get :total_sprint_time_tracking
   end
   root 'daily_work_logs#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
