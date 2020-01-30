@@ -1,0 +1,2 @@
+class SprintRemainingTime < ApplicationRecord
+end
