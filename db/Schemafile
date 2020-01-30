@@ -3,3 +3,12 @@ create_table "users", force: :cascase do |t|
   t.string "jira_id", limit: 255
   t.string "position", limit:255
 end
+
+create_table "sprint_time_trackings", force: :cascase do |t|
+  t.integer  "user_id",        null: false, limit: 4,  unsigned: true
+  t.string   "jira_id",        null: false, limit: 255
+  t.string   "sprint_id",      null: false, limit: 255
+  t.bigint   "time_spent", null: false,            unsigned: true
+  t.bigint   "remaining_time", null: false,            unsigned: true
+  t.datetime "created_at",     null: false,                            precision: 6
+end
