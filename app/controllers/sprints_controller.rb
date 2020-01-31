@@ -25,6 +25,7 @@ class SprintsController < ApplicationController
       response_success(self.class.name, self.action_name, @board_sprints)
     end
   rescue => e
+    logger.error "#{Rails.backtrace_cleaner.clean(e.backtrace).first}\n#{e.inspect}"
     if e.class.name == "JIRA::HTTPError"
       response_bad_request
     else
