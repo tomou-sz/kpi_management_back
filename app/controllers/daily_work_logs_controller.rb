@@ -13,16 +13,23 @@ class DailyWorkLogsController < ApplicationController
             start_index:0
           )
           total_time_spent = 0
+          daily_work_log_hash = { jira_id: jira_id }
+          sprint_issues = []
           issues.each do |issue|
             worklogs = issue.fields['worklog']['worklogs']
             worklogs.each do |worklog|
               author_name = worklog['author']['name']
-              time_spent = worklog['timeSpentSeconds']
+              time_spent = worklog['timeSpentSeconds'].to_i
               date = worklog['started'][0,10]
-              total_time_spent += time_spent if jira_id == author_name && target_date == date
+              if jira_id == author_name && target_date == date
+                total_time_spent += time_spent
+                sprint_issues << { key: issue.attrs['key'], time_spent: time_spent }
+              end
             end
           end
-          {jira_id: jira_id, total_time_spent: (total_time_spent/3600)}
+          daily_work_log_hash[:total_time_spent] = total_time_spent / 3600.0
+          daily_work_log_hash[:issues] = sprint_issues
+          daily_work_log_hash
         end
       response_success(self.class.name, self.action_name, @daily_work_log)
     end
